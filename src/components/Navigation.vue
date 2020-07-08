@@ -3,7 +3,7 @@
     <v-toolbar app height="100" class="hidden-sm-and-down">
     <v-toolbar-title>Nissint</v-toolbar-title>
     <v-spacer />
-        <v-toolbar-items class="visible-md">
+        <v-toolbar-items>
          <v-btn depressed text 
           v-for="item in menu"
           :key="item.icon"
