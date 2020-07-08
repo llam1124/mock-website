@@ -1,61 +1,39 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">About</span>
-        <span class="mr-2">Open Positions</span>
-        <span class="mr-2">Contact</span>
-      </v-btn>
-    </v-app-bar>
-
+   
+      <Navigation />
+ 
     <v-content>
-      <HelloWorld/>
+      <Home/>
+      <About/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+//Example to reference or have a working demo
+//import HelloWorld from './components/HelloWorld';
+import Home from './components/Home';
+import About from './components/About';
+import Navigation from './components/Navigation';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    Home,
+    About,
+    Navigation
   },
 
-  data: () => ({
-    //
-  }),
+  data:() => {}
 };
 </script>
+
+<style scoped>
+
+  html body {
+    font-family: 'Open Sans';
+  }
+
+</style>
