@@ -5,6 +5,7 @@
  
     <v-content>
       <Home/>
+      <Service />
       <About/>
     </v-content>
   </v-app>
@@ -14,6 +15,7 @@
 //Example to reference or have a working demo
 //import HelloWorld from './components/HelloWorld';
 import Home from './components/Home';
+import Service from './components/Service';
 import About from './components/About';
 import Navigation from './components/Navigation';
 
@@ -22,6 +24,7 @@ export default {
 
   components: {
     Home,
+    Service,
     About,
     Navigation
   },

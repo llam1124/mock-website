@@ -1,7 +1,9 @@
 <template>
 <div>
-    <v-toolbar app height="100" class="hidden-sm-and-down">
-    <v-toolbar-title>Nissint</v-toolbar-title>
+    <!-- For Desktop View -->
+    <v-toolbar app class="hidden-sm-and-down">
+    <img class="mr-3" :src="require('../assets/logo-without-name.png')" height="40"/>
+    <v-toolbar-title><a href="/mock-website">Nissint</a></v-toolbar-title>
     <v-spacer />
         <v-toolbar-items>
          <v-btn depressed text 
@@ -10,41 +12,40 @@
           :to="item.link"
         >{{ item.title }}</v-btn>
       </v-toolbar-items>
-      
     </v-toolbar>
-<v-toolbar app dark color="blue-grey darken-3" class="hidden-sm-and-up">
-        <v-toolbar-title>Mobile Menu</v-toolbar-title>
-        <v-spacer></v-spacer>
+    <!-- For Mobile View -->
 
-        <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
-          <v-app-bar-nav-icon dark slot="activator"></v-app-bar-nav-icon>
-          <v-card>
-            <v-toolbar flat color="blue-grey darken-2">
-              <v-toolbar-title>Mobile Menu</v-toolbar-title>
-              <v-spacer></v-spacer>
-              <v-btn icon @click.native="dialog = false">
-                <v-icon>close</v-icon>
-              </v-btn>
-            </v-toolbar>
-
+    <v-toolbar app dark color="blue-grey darken-3" class="hidden-md-and-up">
+        <img class="mr-3" :src="require('../assets/logo-without-name.png')" height="40"/>
+        <v-spacer />
+        <!--<v-app-bar-nav-icon dark @click.stop="drawer = !drawer"></v-app-bar-nav-icon>-->
+            <v-menu offset-y>
+            <template v-slot:activator="{ on, attrs }">
+                <v-app-bar-nav-icon dark v-on="on" v-bind="attrs"></v-app-bar-nav-icon>
+            </template>
             <v-list>
-              <v-list-tile
+                <v-list-item
                 v-for="(item, index) in menu"
                 :key="index"
-                to="#"
-              >
-                <v-list-tile-action>
-                  <v-icon v-if="item.icon">{{item.icon}}</v-icon>
-                </v-list-tile-action>
-                <v-list-tile-content>
-                  <v-list-tile-title :title="item.title">{{ item.title }}</v-list-tile-title>
-                </v-list-tile-content>
-              </v-list-tile>
+                width="100"
+                >
+                <v-list-item-title>{{ item.title }}</v-list-item-title>
+                </v-list-item>
             </v-list>
-          </v-card>
-        </v-dialog>
+            </v-menu>
 
-      </v-toolbar>
+        <!--
+        <v-navigation-drawer app clipped bottom v-model="drawer">
+            <v-list dense>
+                <v-list-item-group v-model="item">
+                <v-list-item v-for="(item, i) in menu" :key="i" @click="() => {}" >
+                    <v-list-item-title> {{ item.title }} </v-list-item-title>
+                </v-list-item>
+                </v-list-item-group>
+            </v-list>
+        </v-navigation-drawer> -->
+    </v-toolbar>
+       
 </div>
 </template>
 
@@ -54,10 +55,14 @@ export default {
 
   data() {
     return{
+      drawer: false,
+      item: 1,
       menu: [
-        {icon: 'about', title: 'About'},
-        {icon: 'careers', title: 'Openings'},
-        {icon: 'contact', title: 'Contact Us'},
+        {icon: 'home', title: 'Home'},
+        {icon: 'services', title: 'Services'},
+        {icon: 'about', title: 'About Us'},
+        {icon: 'careers', title: 'Careers'},
+        {icon: 'contact', title: 'Contact'},
       ]
     }
   },
@@ -72,10 +77,18 @@ export default {
 
 
 <style scoped>
-  
+    a:link {
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: none;
+    }
     div {
         color: #257bd7;
         font-size: 20px;
     }
 </style>
+    
+
+
     
