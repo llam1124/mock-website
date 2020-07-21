@@ -1,6 +1,5 @@
 <template>
   <div id="home-block">
-
     <v-carousel cycle hide-delimiters :show-arrows="false" >
       <v-carousel-item
         v-for="(item, i) in items"
@@ -9,6 +8,7 @@
         reverse-transition="fade-transition"
         transition="fase-transition"
       >
+
       </v-carousel-item>
     </v-carousel>
   </div>

@@ -2,7 +2,7 @@
 <div>
     <!-- For Desktop View -->
     <v-toolbar app class="hidden-sm-and-down">
-    <img class="mr-3" :src="require('../assets/logo-without-name.png')" height="40"/>
+    <img class="mr-3" :src="require('../assets/logo-without-name.png')" height="50"/>
     <v-toolbar-title><a href="/mock-website">Nissint</a></v-toolbar-title>
     <v-spacer />
         <v-toolbar-items>
@@ -16,7 +16,7 @@
     <!-- For Mobile View -->
 
     <v-toolbar app dark color="blue-grey darken-3" class="hidden-md-and-up">
-        <img class="mr-3" :src="require('../assets/logo-without-name.png')" height="40"/>
+        <img class="mr-3" :src="require('../assets/logo-without-name.png')" height="50"/>
         <v-spacer />
         <!--<v-app-bar-nav-icon dark @click.stop="drawer = !drawer"></v-app-bar-nav-icon>-->
             <v-menu offset-y>
