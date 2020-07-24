@@ -1,11 +1,10 @@
 <template>
-    <v-container id="service-block">
-
+    <div id="service-block">
         <h1> Service Block</h1>
         <v-row>
             <v-col>
-                <v-row  v-for="i in rowCreate" :key="i" align="center" justify="center">
-                    <v-card v-for="item in itemInEachRow(i)" :key="item" flat tile width="300" class="ma-3 pa-3">
+                <v-row  v-for="index in column" :key="index" align="center" justify="center">
+                    <v-card v-for="item in itemInEachRow(index)" :key="item.title" flat tile width="400" class="ma-3 pa-3">
                         <h2> 
                             <v-icon> mdi-artstation </v-icon>
                             {{ item.title }} 
@@ -18,33 +17,60 @@
             </v-col>
         </v-row>
 
-    </v-container>
+    </div>
 </template>
 
 <script>
 
 export default {
-
     name: "Service",
-
-    data() {
+    data: function(){
         return{
             column: 3,
             services: [
-                {title: "Web Development",
-                text: "This template is fully responsive and Retina-ready, which means its ability to be displayed on any modern gadgets, from computers and laptops to smartphones and tablets. It is also perfectly optimized for high-resolution displays and other devices."},
-                {title: "Digital Demodulation",
-                text: "This template is fully responsive and Retina-ready, which means its ability to be displayed on any modern gadgets, from computers and laptops to smartphones and tablets. It is also perfectly optimized for high-resolution displays and other devices."},
-                {title: "Data Computing",
-                text: "This template is fully responsive and Retina-ready, which means its ability to be displayed on any modern gadgets, from computers and laptops to smartphones and tablets. It is also perfectly optimized for high-resolution displays and other devices."},
-                {title: "Enterprise Application",
-                text: "This template is fully responsive and Retina-ready, which means its ability to be displayed on any modern gadgets, from computers and laptops to smartphones and tablets. It is also perfectly optimized for high-resolution displays and other devices."},
-                {title: "Reverse Engineering",
-                text: "This template is fully responsive and Retina-ready, which means its ability to be displayed on any modern gadgets, from computers and laptops to smartphones and tablets. It is also perfectly optimized for high-resolution displays and other devices."},
-                {title: "Software Design and Development",
-                text: "This template is fully responsive and Retina-ready, which means its ability to be displayed on any modern gadgets, from computers and laptops to smartphones and tablets. It is also perfectly optimized for high-resolution displays and other devices."}
-            ]
-        }
+                {
+                    title: "Web Development",
+                    text: "This template is fully responsive and Retina-ready, " + 
+                    "which means its ability to be displayed on any modern gadgets, from computers and " +
+                    "laptops to smartphones and tablets. It is also perfectly optimized for high-resolution " +
+                    "displays and other devices."
+                },
+                {
+                    title: "Digital Demodulation",
+                    text: "This template is fully responsive and Retina-ready, " + 
+                    "which means its ability to be displayed on any modern gadgets, from computers and " +
+                    "laptops to smartphones and tablets. It is also perfectly optimized for high-resolution " +
+                    "displays and other devices."
+                },                
+                {
+                    title: "Data Computing",
+                    text: "This template is fully responsive and Retina-ready, " + 
+                    "which means its ability to be displayed on any modern gadgets, from computers and " +
+                    "laptops to smartphones and tablets. It is also perfectly optimized for high-resolution " +
+                    "displays and other devices."
+                },                
+                {
+                    title: "Enterprise Application",
+                    text: "This template is fully responsive and Retina-ready, " + 
+                    "which means its ability to be displayed on any modern gadgets, from computers and " +
+                    "laptops to smartphones and tablets. It is also perfectly optimized for high-resolution " +
+                    "displays and other devices."
+                },                
+                {
+                    title: "Reverse Engineering",
+                    text: "This template is fully responsive and Retina-ready, " + 
+                    "which means its ability to be displayed on any modern gadgets, from computers and " +
+                    "laptops to smartphones and tablets. It is also perfectly optimized for high-resolution " +
+                    "displays and other devices."
+                },
+                {
+                    title: "Software Design and Development",
+                    text: "This template is fully responsive and Retina-ready, " + 
+                    "which means its ability to be displayed on any modern gadgets, from computers and " +
+                    "laptops to smartphones and tablets. It is also perfectly optimized for high-resolution " +
+                    "displays and other devices."
+                },            
+        ]}
     },
     computed: {
         rowCreate: function(){
@@ -62,8 +88,15 @@ export default {
 <style scoped>
 
     h1 {
-        margin-top: 20px;
-        text-align: center;
+        margin: 40px 0px 20px 60px;
+    }
+
+    h2 {
+        font-family: "Open Sans";
+    }
+
+    p {
+        font-family: "Open Sans";
     }
 
 </style>

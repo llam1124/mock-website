@@ -1,27 +1,27 @@
 <template>
 <div>
     <!-- For Desktop View -->
-    <v-toolbar app class="hidden-sm-and-down">
+    <v-app-bar app fixed class="hidden-sm-and-down" height="70">
     <img class="mr-3" :src="require('../assets/logo-without-name.png')" height="50"/>
-    <v-toolbar-title><a href="/mock-website">Nissint</a></v-toolbar-title>
+    <v-toolbar-title><a href="#home-block">Nissint</a></v-toolbar-title>
     <v-spacer />
         <v-toolbar-items>
-         <v-btn depressed text 
+         <v-btn depressed text link
           v-for="item in menu"
           :key="item.icon"
-          :to="item.link"
+          :href="item.href"
         >{{ item.title }}</v-btn>
       </v-toolbar-items>
-    </v-toolbar>
+    </v-app-bar>
     <!-- For Mobile View -->
 
-    <v-toolbar app dark color="blue-grey darken-3" class="hidden-md-and-up">
+    <v-app-bar app fixed class="hidden-md-and-up">
         <img class="mr-3" :src="require('../assets/logo-without-name.png')" height="50"/>
         <v-spacer />
         <!--<v-app-bar-nav-icon dark @click.stop="drawer = !drawer"></v-app-bar-nav-icon>-->
             <v-menu offset-y>
             <template v-slot:activator="{ on, attrs }">
-                <v-app-bar-nav-icon dark v-on="on" v-bind="attrs"></v-app-bar-nav-icon>
+                <v-app-bar-nav-icon v-on="on" v-bind="attrs"></v-app-bar-nav-icon>
             </template>
             <v-list>
                 <v-list-item
@@ -44,7 +44,7 @@
                 </v-list-item-group>
             </v-list>
         </v-navigation-drawer> -->
-    </v-toolbar>
+    </v-app-bar>
        
 </div>
 </template>
@@ -58,11 +58,11 @@ export default {
       drawer: false,
       item: 1,
       menu: [
-        {icon: 'home', title: 'Home'},
-        {icon: 'services', title: 'Services'},
-        {icon: 'about', title: 'About Us'},
-        {icon: 'careers', title: 'Careers'},
-        {icon: 'contact', title: 'Contact'},
+        {icon: 'home', title: 'Home', href: '#home-block'},
+        {icon: 'services', title: 'Services', href: '#service-block'},
+        {icon: 'about', title: 'About Us', href:'#about-block'},
+        {icon: 'careers', title: 'Careers', href: '#career-block'},
+        {icon: 'contact', title: 'Contact', href:'#contact-block'},
       ]
     }
   },

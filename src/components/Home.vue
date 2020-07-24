@@ -21,7 +21,6 @@ export default {
       return{
         items: [
           {src: require("../assets/view1.jpg")},
-          {src: require("../assets/view2.jpg")},
           {src: require("../assets/view3.jpg")},
           {src: require("../assets/view4.jpg")},
         ]

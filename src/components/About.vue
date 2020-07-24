@@ -1,24 +1,38 @@
 <template>
-  <v-container id="about-block">
-    <h1> About Us Block </h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-  </v-container>
+  <div id="about-block">
+    <v-img src="../assets/view5.jpg" height="300"> </v-img>
+  
+    <h1> About Us </h1>
+    <v-row>
+  
+      <h2> Women-owned Small Business </h2>
+      <p id="text"> {{ about }}  </p>
+      <p id="text"> {{ history }} </p>
+
+    </v-row>
+  </div>
 </template>
 
 <script>
 export default {
-    name: "About"
+    name: "About",
+    data: () => ({
+      about:"Nissint became a reality in 2006. But, didn't start recruiting until 2012. " +
+        "Now, we have over 20 employees working across 12 different defense contracts and many more contracts and opportunites " +
+        "in the horizon. ",
+      history: "The company was created by Nissa and John Ellinwood who, after long careers in the Intelligence Community " +
+        "decided it was time to take their skills and experience and build a company that realized their vision of an ideal place to work" +
+        "That vision was simple, to surround themselves with the best developers in their fields, and to work on the most challenging and rewarding projects around.",
+    })
 }
 </script>
 
 <style scoped>
-    #about_block {
-        padding: 20px;
-    }
+  h1, h2 {
+    padding: 10px;
+  }
 
-    #service_block {
-        padding: 20px;
-    }
+  #text {
+    font-size: 20px;
+  }
 </style>

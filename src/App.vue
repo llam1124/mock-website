@@ -1,23 +1,23 @@
 <template>
   <v-app>
-   
-      <Navigation />
- 
-    <v-content>
+    <Navigation />
+    <v-main>
       <Home/>
       <Service />
       <About/>
-    </v-content>
+      <Contact />
+    </v-main>
+   <Footer />
   </v-app>
 </template>
 
 <script>
-//Example to reference or have a working demo
-//import HelloWorld from './components/HelloWorld';
 import Home from './components/Home';
 import Service from './components/Service';
 import About from './components/About';
+import Contact from './components/Contact';
 import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 
 export default {
   name: 'App',
@@ -26,10 +26,10 @@ export default {
     Home,
     Service,
     About,
-    Navigation
-  },
-
-  data:() => {}
+    Contact,
+    Navigation,
+    Footer
+  }
 };
 </script>
 
