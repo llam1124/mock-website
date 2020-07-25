@@ -1,5 +1,5 @@
 <template>
-  <div id="home-block">
+  <div id="career-block">
     <v-carousel cycle hide-delimiters :show-arrows="false" >
       <v-carousel-item
         v-for="(item, i) in items"
@@ -11,12 +11,18 @@
 
       </v-carousel-item>
     </v-carousel>
+      <Service />
+    <About />
+    <Contact />
   </div>
 </template>
 
 <script>
+
+
 export default {
-    name: "Home",
+    name: "Career",
+
     data(){
       return{
         items: [
@@ -30,7 +36,7 @@ export default {
 </script>
 
 <style scoped>
-    #home_block {
+    #career_block {
         padding: 20px;
     }
 

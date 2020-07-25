@@ -8,9 +8,12 @@
         <v-toolbar-items>
          <v-btn depressed text link
           v-for="item in menu"
-          :key="item.icon"
-          :href="item.href"
-        >{{ item.title }}</v-btn>
+          :key="item.id"
+        >
+            <router-link :to="item.path">
+            {{ item.title }}
+            </router-link>
+            </v-btn>
       </v-toolbar-items>
     </v-app-bar>
     <!-- For Mobile View -->
@@ -29,7 +32,9 @@
                 :key="index"
                 width="100"
                 >
-                <v-list-item-title>{{ item.title }}</v-list-item-title>
+                <router-link :to="{ path: '/' , hash: item.path}">
+                {{ item.title }}
+                </router-link>
                 </v-list-item>
             </v-list>
             </v-menu>
@@ -58,11 +63,11 @@ export default {
       drawer: false,
       item: 1,
       menu: [
-        {icon: 'home', title: 'Home', href: '#home-block'},
-        {icon: 'services', title: 'Services', href: '#service-block'},
-        {icon: 'about', title: 'About Us', href:'#about-block'},
-        {icon: 'careers', title: 'Careers', href: '#career-block'},
-        {icon: 'contact', title: 'Contact', href:'#contact-block'},
+        {id: 'home', title: 'Home', path: '/'},
+        {id: 'services', title: 'Services', path: '/#service-block'},
+        {id: 'about', title: 'About Us', path: '/#about-block'},
+        {id: 'careers', title: 'Careers', path: '/career'},
+        {id: 'contact', title: 'Contact', path: '/#contact-block'},
       ]
     }
   },
