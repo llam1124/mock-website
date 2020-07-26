@@ -3,13 +3,13 @@
     <v-img src="../assets/view5.jpg" height="300"> </v-img>
   
     <h1> About Us </h1>
-    <v-row>
+    <v-container>
   
       <h2> Women-owned Small Business </h2>
       <p id="text"> {{ about }}  </p>
       <p id="text"> {{ history }} </p>
 
-    </v-row>
+    </v-container>
   </div>
 </template>
 
@@ -28,8 +28,9 @@ export default {
 </script>
 
 <style scoped>
-  h1, h2 {
+  h1 {
     padding: 10px;
+    margin: 40px 0px 20px 60px;
   }
 
   #text {

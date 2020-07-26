@@ -1,13 +1,14 @@
 <template>
     <div id="contact-block">
         <h1> Contact Us </h1>
-        <div style="display: flex">
-            <div id="contact_info">
+        <v-container>
+            <v-row>
+            <v-col id="contact_info">
                 <p><v-icon> mdi-phone</v-icon> Phone: 410-919-9662</p>
                 <p><v-icon> mdi-email</v-icon> Email: example@gmail.com </p>
                 <p><v-icon> mdi-map-marker</v-icon> Location: Some Far Far Away Place </p>
-            </div>
-            <div id="contact_form">
+            </v-col>
+            <v-col id="contact_form">
                 <v-form ref="form"  align="right">
                     <p> Want to learn more about Nissint? Do you have a comment or suggestion?</p>
                     <p>We would love to hear from you!</p>
@@ -29,8 +30,9 @@
                     </div>
                     <v-btn>Submit</v-btn>
                 </v-form>
-            </div>
-        </div>
+            </v-col>
+            </v-row>
+        </v-container>
     </div>
 </template>
 
@@ -47,8 +49,7 @@ export default {
 
 <style scoped>
     h1 {
-        text-align: center;
-        margin-bottom: 20px;
+        margin: 40px 0px 20px 60px;
     }
     p {
         margin: 20px 0px 20px 0px; /* top right bottom left*/

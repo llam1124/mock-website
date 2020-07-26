@@ -32,7 +32,7 @@
                 :key="index"
                 width="100"
                 >
-                <router-link :to="{ path: '/' , hash: item.path}">
+                <router-link :to="{ path: item.path}">
                 {{ item.title }}
                 </router-link>
                 </v-list-item>

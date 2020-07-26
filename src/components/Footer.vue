@@ -1,5 +1,5 @@
 <template>
-  <v-footer  height="100" outlined>
+  <v-footer  height="100" outlined absolute>
           <v-col
       class="text-center"
       cols="12"
