@@ -42,10 +42,6 @@ export default {
 </script>
 
 <style scoped>
-    #home_block {
-        padding: 20px;
-    }
-
     h1 {
       text-align: center;
     }

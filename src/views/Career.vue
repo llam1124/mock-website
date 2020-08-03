@@ -1,20 +1,37 @@
 <template>
-    <div>
-        <div id="img_box" >
+    <div id="career">
+        <div id="img-box" >
             <v-img src="../assets/view7.jpg" center height="300">
-                <v-row id="img_content" align="center"> {{ text }} </v-row>
+                <div id="img-content"> {{ text }} </div>
             </v-img>
         </div>
-        <v-container>
+        <div id="search-box">
+                <v-text-field 
+                    v-model="search" 
+                    append-icon="mdi-magnify" 
+                    label="Search" 
+                    outlined
+                    class="shrink 1 ma-2">
+                </v-text-field>
+                <v-text-field 
+                    v-model="location" 
+                    append-icon="mdi-map-marker" 
+                    label="Location" 
+                    outlined
+                    class="shrink 2 ma-2">
+                </v-text-field>
+        </div>
+        <div id="job-results">
             <v-expansion-panels>
-                <v-expansion-panel v-for="item in openings" :key="item.title">
+                <v-expansion-panel v-for="item in openings" :key="item.title" focusable>
                     <v-expansion-panel-header>{{ item.title }}</v-expansion-panel-header>
                     <v-expansion-panel-content>
                         {{ item.description }}
+                        <v-btn color="blue">Apply</v-btn>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
             </v-expansion-panels>
-        </v-container>
+        </div>
     </div>
 </template>
 
@@ -26,17 +43,22 @@ export default {
 
     data(){
       return{
-        text: "All of our work falls under three main areas: Digital Signal Processing and Collection Systems, " + 
-            "Distributed Computing and Machine Learning, and Cyber Capabilities Development" +
-            "No matter which job you choose here at Nissint, you get industry leading benefits. " +
-            "We pride ourselves in our flexibility. You can pick and choose your benefits." +
-            "We do provide a basic package, but you can change and alter any or all of the components to your liking.",
+        text: "Join Our Team",
+        search: '',
+        location: '',
         openings: [
-            { title: 'Junior Web Developer', description: 'something to enter in here', location:'Hanover, MD'},
+            { 
+                title: 'Junior Web Developer', 
+                description: 'something to enter in here', 
+                location:'Fort Meade, MD',
+                job:[]
+            },
             { title: 'Cloud Developer', description: 'something to enter in here', location:'Hanover, MD'},
             { title: 'Reverse Engineer', description: 'something to enter in here', location:'Hanover, MD'},
-            { title: 'Business Manager', description: 'something to enter in here', location:'Hanover, MD'},
+            { title: 'Business Manager', description: 'something to enter in here', location:'Columbia, MD'},
             { title: 'System Administrator', description: 'something to enter in here', location:'Hanover, MD'},
+            { title: 'System Developer', description: 'something to enter in here', location:'Hanover, MD'},
+            { title: 'DevOps Developer', description: 'something to enter in here', location:'Annapolis, MD'},
         ]
       }
     }
@@ -44,23 +66,42 @@ export default {
 </script>
 
 <style scoped>
-    #img_box{
+    #career {
+        height: 100%;
+        margin-bottom: 30px;
+    }
+    #img-box{
         position: relative;
     }
 
-    #img_content {
-        font-size: 20px;
-        position: absolute; /* Position the background text */
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    #img-content {
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background: rgb(0, 0, 0); /* Fallback color */
         background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
         color: white;
         width: 100%; /* Full width */
-        height: 100%;
-        padding: 20px; /* Some padding */
+        height: 100%;        
     }
 
+    #job-results{
 
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    #search-box {
+        margin-top: 10px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .v-expansion-panel-header{
+        font-size: 20px;
+        min-height: 60px;
+        color: cornflowerblue;
+    }
 </style>

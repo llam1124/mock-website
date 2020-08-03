@@ -3,7 +3,7 @@
     <!-- For Desktop View -->
     <v-app-bar app fixed class="hidden-sm-and-down" height="70">
     <img class="mr-3" :src="require('../assets/logo-without-name.png')" height="50"/>
-    <v-toolbar-title><a href="#home-block">Nissint</a></v-toolbar-title>
+    <v-toolbar-title><a href="/">Nissint</a></v-toolbar-title>
     <v-spacer />
         <v-toolbar-items>
          <v-btn depressed text link

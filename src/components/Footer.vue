@@ -1,9 +1,6 @@
 <template>
-  <v-footer  height="100" outlined absolute>
-          <v-col
-      class="text-center"
-      cols="12"
-    >
+  <v-footer  app absolute height="100">
+    <v-col class="text-center" cols="12">
         <v-row align="center" justify="center">
             <v-icon > mdi-facebook </v-icon>
             <v-icon > mdi-linkedin </v-icon>
