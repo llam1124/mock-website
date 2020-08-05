@@ -1,18 +1,17 @@
 <template>
-    <div id="contact-block">
+    <div style="margin-bottom: 20px;">
         <h1> Contact Us </h1>
-        <v-container>
-            <v-row>
+        <div id="contact_content">
             <v-col id="contact_info">
                 <p><v-icon> mdi-phone</v-icon> Phone: 410-919-9662</p>
                 <p><v-icon> mdi-email</v-icon> Email: example@gmail.com </p>
                 <p><v-icon> mdi-map-marker</v-icon> Location: Some Far Far Away Place </p>
             </v-col>
-            <v-col id="contact_form">
+            <div id="contact_form">
                 <v-form ref="form"  align="right">
                     <p> Want to learn more about Nissint? Do you have a comment or suggestion?</p>
                     <p>We would love to hear from you!</p>
-                    <div style="width: 60%">
+                    <v-col>
                         <v-text-field 
                             v-model="name" 
                             label="name"
@@ -27,12 +26,11 @@
                             v-model="message" 
                             label="message" 
                             outlined ></v-textarea>
-                    </div>
+                    </v-col>
                     <v-btn>Submit</v-btn>
                 </v-form>
-            </v-col>
-            </v-row>
-        </v-container>
+            </div> 
+        </div> 
     </div>
 </template>
 
@@ -49,28 +47,46 @@ export default {
 
 <style scoped>
     h1 {
+        padding: 10px;
         margin: 40px 0px 20px 60px;
     }
     p {
         margin: 20px 0px 20px 0px; /* top right bottom left*/
         font-size: 20px;
     }
-
-    #contact-block {
-        margin: 20px;
-       
+    #contact_content {
+        display: flex;
+        flex-wrap: wrap;
     }
-
     #contact_form {
-        width: 50%;
+       width: 50%;
+       margin-right: 40px;
     }
 
     #contact_info {
         width: 50%;
+        flex-direction: column;
         margin-top: 20px;
+        margin-left: 40px;
     }
 
     #image_block {
         height: 200px;
+    }
+    @media screen and (max-width: 600px){
+        #contact_content {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        #contact_form {
+            margin-left: 40px;
+            width: 80%;
+        }
+
+        #contact_info {
+            flex-direction: column;
+            margin-top: 20px;   
+        }
     }
 </style>

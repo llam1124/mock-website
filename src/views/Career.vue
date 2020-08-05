@@ -26,8 +26,15 @@
                 <v-expansion-panel v-for="item in openings" :key="item.title" focusable>
                     <v-expansion-panel-header>{{ item.title }}</v-expansion-panel-header>
                     <v-expansion-panel-content>
-                        {{ item.description }}
-                        <v-btn color="blue">Apply</v-btn>
+                        <v-card flat>
+                            <v-card-text>
+                                <p> Location: {{ item.location }} </p>
+                                <p> {{ item.description }} </p>
+                            </v-card-text>
+                            <v-card-actions right>
+                                <v-btn text color="blue darken-3">Apply</v-btn>
+                            </v-card-actions>
+                        </v-card>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
             </v-expansion-panels>
