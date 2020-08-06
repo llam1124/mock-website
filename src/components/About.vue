@@ -1,5 +1,5 @@
 <template>
-  <div id="about-block">
+  <div id="about">
     <v-img src="../assets/view5.jpg" height="300"> </v-img>
   
     <h1> About Us </h1>

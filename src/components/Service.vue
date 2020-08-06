@@ -1,5 +1,5 @@
 <template>
-    <div id="service-block">
+    <div id="service">
         <h1> Service Block</h1>
         <v-row>
             <v-col>
@@ -88,15 +88,22 @@ export default {
 <style scoped>
 
     h1 {
-        margin: 40px 0px 20px 60px;
+        padding: 40px 0 20px 60px; /* top right bottom left*/
     }
 
     h2 {
-        font-family: "Open Sans";
+        font-family: "Roboto";
+        font-size: 26px;
     }
 
     p {
-        font-family: "Open Sans";
+        font-family: "Roboto";
+        font-size: 18px;
+        color: #888;
+    }
+
+    #service {
+        background-color: #f8f8f8;
     }
 
 </style>

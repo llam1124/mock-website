@@ -1,5 +1,5 @@
 <template>
-    <div style="margin-bottom: 20px;">
+    <div id="contact" style="margin-bottom: 20px;">
         <h1> Contact Us </h1>
         <div id="contact_content">
             <v-col id="contact_info">
@@ -27,7 +27,7 @@
                             label="message" 
                             outlined ></v-textarea>
                     </v-col>
-                    <v-btn>Submit</v-btn>
+                    <v-btn dark>Submit</v-btn>
                 </v-form>
             </div> 
         </div> 

@@ -3,11 +3,10 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Career from '../views/Career.vue'
 
-
 Vue.use(VueRouter)
 
   const routes = [
-  { path: '/', name: 'Home', component: Home, },
+  { path: '/', name: 'Home', component: Home },
   { path: '/career', name: 'Career', component: Career }
 ]
 
@@ -15,7 +14,7 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,
-  scrollBehavior(to, from, savedPosition){
+  scrollBehavior: function(to, from, savedPosition){
     if(savedPosition){
       return savedPosition;
     }

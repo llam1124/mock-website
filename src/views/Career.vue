@@ -31,7 +31,7 @@
                                 <p> Location: {{ item.location }} </p>
                                 <p> {{ item.description }} </p>
                             </v-card-text>
-                            <v-card-actions right>
+                            <v-card-actions >
                                 <v-btn text color="blue darken-3">Apply</v-btn>
                             </v-card-actions>
                         </v-card>
@@ -110,5 +110,12 @@ export default {
         font-size: 20px;
         min-height: 60px;
         color: cornflowerblue;
+    }
+    @media screen and (max-width: 600px){
+        #job-results{
+
+            padding-left: 40px;
+            padding-right: 40px;
+        }
     }
 </style>
