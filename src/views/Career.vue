@@ -5,6 +5,20 @@
                 <div id="img-content"> {{ text }} </div>
             </v-img>
         </div>
+    <div class="benefits">
+        <v-row>
+            <v-col>
+                <v-row  v-for="index in column" :key="index" align="center" justify="center">
+                    <v-card v-for="item in itemInEachRow(index)" :key="item.text" flat tile height="200" width="400" class="ma-3 pa-3" color="#f8f8f8">
+                        <v-icon large>{{ item.icon }} </v-icon>
+                        <h3>
+                            {{ item.text }}
+                        </h3>
+                    </v-card>
+                </v-row>
+            </v-col>
+        </v-row>
+    </div>
         <div id="search-box">
                 <v-text-field 
                     v-model="search" 
@@ -50,6 +64,7 @@ export default {
 
     data(){
       return{
+        column: 3,
         text: "Join Our Team",
         search: '',
         location: '',
@@ -66,13 +81,35 @@ export default {
             { title: 'System Administrator', description: 'something to enter in here', location:'Hanover, MD'},
             { title: 'System Developer', description: 'something to enter in here', location:'Hanover, MD'},
             { title: 'DevOps Developer', description: 'something to enter in here', location:'Annapolis, MD'},
+        ],
+        benefits: [
+            { text: "Company Contributes 10% to 401K", icon:"mdi-piggy-bank"},
+            { text: "CareFirst BluePreferred PPO Silver Health Plan with the option of HSA and/or FSA", icon:"mdi-medical-bag"},
+            { text: "Training Benefit of up to $5,250 per year", icon:"mdi-school"},
+            { text: "One-Time Hardware and/or Software Stipend of up to $2,500", icon:"mdi-laptop"},
+            { text: "Short-Term and Long-Term Disability", icon:"mdi-human-wheelchair"},
+            { text: "Life Insurance & ADD", icon:"mdi-hand-heart"}
         ]
       }
+    },
+    computed: {
+        rowCreate: function(){
+            return Math.ceil(this.benefits.length / this.column);
+        }
+    },
+    methods: {
+        itemInEachRow: function(index){
+            return this.benefits.slice((index - 1) * this.column, index * this.column);
+        }
     }
 }
 </script>
 
 <style scoped>
+    h3 {
+        font-weight: 300;
+    }
+
     #career {
         height: 100%;
         margin-bottom: 30px;
@@ -94,7 +131,6 @@ export default {
     }
 
     #job-results{
-
         padding-left: 80px;
         padding-right: 80px;
     }
@@ -106,6 +142,13 @@ export default {
         justify-content: center;
         align-items: center;
     }
+
+    .benefits {
+        background-color: #f8f8f8;
+        padding-top: 60px;
+        padding-bottom: 50px;
+    }
+
     .v-expansion-panel-header{
         font-size: 20px;
         min-height: 60px;
@@ -113,7 +156,6 @@ export default {
     }
     @media screen and (max-width: 600px){
         #job-results{
-
             padding-left: 40px;
             padding-right: 40px;
         }

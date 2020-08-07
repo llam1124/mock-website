@@ -1,15 +1,12 @@
 <template>
   <div id="about">
     <v-img src="../assets/view5.jpg" height="300"> </v-img>
-  
-    <h1> About Us </h1>
-    <v-container>
-  
-      <h2> Women-owned Small Business </h2>
-      <p id="text"> {{ about }}  </p>
-      <p id="text"> {{ history }} </p>
-
-    </v-container>
+    <h1> About Us </h1> 
+    <h2> Women-owned Small Business </h2>
+    <div class="content">
+      <h3> {{ about }}  </h3>
+      <h3> {{ history }} </h3>
+    </div>
   </div>
 </template>
 
@@ -28,12 +25,22 @@ export default {
 </script>
 
 <style scoped>
-  h1 {
-    padding: 10px;
-    margin: 40px 0px 20px 60px;
+
+  h1, h2, h3 {
+    font-weight: 300;
+    padding: 40px 60px 0 60px; /* top right bottom left*/
   }
 
-  #text {
-    font-size: 20px;
+  #about {
+    background-color: #f8f8f8;
+    padding-bottom: 100px;
+  }
+
+  .content{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 40px 0 20px 50px; /* top right bottom left*/
   }
 </style>

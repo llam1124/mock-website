@@ -4,7 +4,7 @@
         <v-row>
             <v-col>
                 <v-row  v-for="index in column" :key="index" align="center" justify="center">
-                    <v-card v-for="item in itemInEachRow(index)" :key="item.title" flat tile width="400" class="ma-3 pa-3">
+                    <v-card v-for="item in itemInEachRow(index)" :key="item.title" flat tile width="400" class="ma-3 pa-3" color="#f8f8f8">
                         <h2> 
                             <v-icon> mdi-artstation </v-icon>
                             {{ item.title }} 
@@ -88,17 +88,15 @@ export default {
 <style scoped>
 
     h1 {
+        font-weight: 300;
         padding: 40px 0 20px 60px; /* top right bottom left*/
     }
 
-    h2 {
-        font-family: "Roboto";
-        font-size: 26px;
+    h2 {   
+        font-weight: 300;
     }
 
     p {
-        font-family: "Roboto";
-        font-size: 18px;
         color: #888;
     }
 

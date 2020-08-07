@@ -8,9 +8,9 @@
                 <p><v-icon> mdi-map-marker</v-icon> Location: Some Far Far Away Place </p>
             </v-col>
             <div id="contact_form">
+                <p style="padding-top: 10px;"> Want to learn more about Nissint? Do you have a comment or suggestion?</p>
+                <p>We would love to hear from you!</p>
                 <v-form ref="form"  align="right">
-                    <p> Want to learn more about Nissint? Do you have a comment or suggestion?</p>
-                    <p>We would love to hear from you!</p>
                     <v-col>
                         <v-text-field 
                             v-model="name" 
@@ -47,12 +47,13 @@ export default {
 
 <style scoped>
     h1 {
-        padding: 10px;
-        margin: 40px 0px 20px 60px;
+        font-weight: 300;
+        padding: 40px 0 20px 60px; /* top right bottom left*/
     }
     p {
         margin: 20px 0px 20px 0px; /* top right bottom left*/
         font-size: 20px;
+        color: #888;
     }
     #contact_content {
         display: flex;
@@ -66,7 +67,7 @@ export default {
     #contact_info {
         width: 50%;
         flex-direction: column;
-        margin-top: 20px;
+        
         margin-left: 40px;
     }
 
