@@ -9,7 +9,7 @@
         <v-row>
             <v-col>
                 <v-row  v-for="index in column" :key="index" align="center" justify="center">
-                    <v-card v-for="item in itemInEachRow(index)" :key="item.text" flat tile height="200" width="400" class="ma-3 pa-3" color="#f8f8f8">
+                    <v-card v-for="item in itemInEachRow(index)" :key="item.text" flat tile height="100" width="400" class="ma-3 pa-3" color="#f8f8f8">
                         <v-icon large>{{ item.icon }} </v-icon>
                         <h3>
                             {{ item.text }}

@@ -26,14 +26,19 @@ export default {
 
 <style scoped>
 
-  h1, h2, h3 {
+  h1, h2 {
     font-weight: 300;
-    padding: 40px 60px 0 60px; /* top right bottom left*/
+    padding: 40px 0 0 60px; /* top right bottom left*/
+  }
+
+  h3 {
+    font-weight: 300;
+    padding: 10px 20px 20px 0; /* top right bottom left*/
   }
 
   #about {
     background-color: #f8f8f8;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
   }
 
   .content{
