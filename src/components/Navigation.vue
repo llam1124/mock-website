@@ -10,8 +10,7 @@
           v-for="item in menu"
           :key="item.id"
         >
-            <a :href="item.path" v-if="isSection(item.path)"> {{ item.title }} </a>
-            <router-link :to="{path: item.path}" v-else>{{ item.title }}</router-link>
+            <router-link :to="item.path" >{{ item.title }}</router-link>
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
@@ -29,8 +28,7 @@
                 v-for="(item, index) in menu"
                 :key="index"
                 >
-                    <a :href="item.path" v-if="isSection(item.path)" style="color: white;"> {{ item.title }} </a>
-                    <router-link :to="item.path" v-else style="color: white;">{{ item.title }}</router-link>
+                    <router-link :to="item.path" style="color: white;">{{ item.title }}</router-link>
                 </v-list-item>
             </v-list>
         </v-menu>
@@ -48,9 +46,9 @@ export default {
       item: 1,
       menu: [
         {id: 'home', title: 'Home', path: '/'},
-        {id: 'services', title: 'Services', path: '/#service'},
+        {id: 'service', title: 'Services', path: '/#service'},
         {id: 'about', title: 'About Us', path: '/#about'},
-        {id: 'careers', title: 'Careers', path: '/career'},
+        {id: 'career', title: 'Careers', path: 'career'},
         {id: 'contact', title: 'Contact', path: '/#contact'},
       ]
     }
@@ -61,7 +59,7 @@ export default {
   methods: {
         isSection: function(path) {
             return (path.includes("#"));
-        }
+        },
   }
 }
 </script>

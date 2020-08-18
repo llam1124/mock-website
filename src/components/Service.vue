@@ -1,10 +1,9 @@
 <template>
     <div id="service">
-        <h1> Service Block</h1>
-        <v-row>
+        <h1> Our Services</h1>
             <v-col>
                 <v-row  v-for="index in column" :key="index" align="center" justify="center">
-                    <v-card v-for="item in itemInEachRow(index)" :key="item.title" flat tile width="400" class="ma-3 pa-3" color="#f8f8f8">
+                    <v-card v-for="item in itemInEachRow(index)" :key="item.title" flat tile width="450" class="ma-3 pa-3" color="#f8f8f8">
                         <h2> 
                             <v-icon> mdi-artstation </v-icon>
                             {{ item.title }} 
@@ -15,8 +14,6 @@
                     </v-card>
                 </v-row>
             </v-col>
-        </v-row>
-
     </div>
 </template>
 
@@ -26,7 +23,7 @@ export default {
     name: "Service",
     data: function(){
         return{
-            column: 3,
+            column: 6,
             services: [
                 {
                     title: "Web Development",

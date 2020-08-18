@@ -1,5 +1,7 @@
 <template>
   <div id="home">
+    <v-img src="../assets/view3.jpg" height="500"> </v-img>
+    <!--
     <v-carousel cycle hide-delimiters :show-arrows="false" >
       <v-carousel-item
         v-for="(item, i) in items"
@@ -8,9 +10,8 @@
         reverse-transition="fade-transition"
         transition="fade-transition"
       >
-
       </v-carousel-item>
-    </v-carousel>
+    </v-carousel>-->
     <Service />
     <About />
     <Contact />
